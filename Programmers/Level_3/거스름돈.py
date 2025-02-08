@@ -6,3 +6,4 @@ def solution(n, money):
         for i in range(m, n + 1):
             dp[i] += dp[i - m]
     return dp[n] % 1_000_000_007
+w
