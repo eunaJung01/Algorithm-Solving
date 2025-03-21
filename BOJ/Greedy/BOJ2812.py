@@ -1,19 +1,15 @@
-# 크게 만들기
-
 import sys
 
 input = sys.stdin.readline
 
 N, K = map(int, input().split())
-num = input().strip()
+number = list(map(int, input().strip()))
 
 stack = []
-cnt = K
-
-for n in num:
-    while stack and cnt > 0 and stack[-1] < n:
+for num in number:
+    while stack and K > 0 and stack[-1] < num:
         stack.pop()
-        cnt -= 1
-    stack.append(n)
+        K -= 1
+    stack.append(num)
 
-print("".join(stack[:N - K]))
+print(''.join(map(str, stack[:len(stack) - K])))
